@@ -1,4 +1,4 @@
-export function TwitterFollowCard({userName, name, isFollowing}) {
+export function TwitterFollowCard({userName = 'unknown', children, isFollowing}) {
     return (
     <article className="tw-followCard">
     <header className="tw-followCard-header">
@@ -8,13 +8,15 @@ export function TwitterFollowCard({userName, name, isFollowing}) {
         alt="El avatar de Midudev"
         />
         <div className="tw-followCard-info">
-            <strong>{name}</strong> 
+            <strong>{children}</strong> 
             <span className="tw-followCard-username">@{userName}</span>
         </div>
     </header>
 
         <aside>
-            <button className="tw-followCard-button">Seguir</button>
+            <button className="tw-followCard-button">
+                Seguir
+            </button>
         </aside>
     </article>
     );
