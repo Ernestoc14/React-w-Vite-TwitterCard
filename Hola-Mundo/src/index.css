@@ -1,14 +1,33 @@
 body{
     display: grid;
-    background: #222;
+    background-color: black;
     margin: 0;
     font-family: system-ui;
     place-content: center;
     min-height: 100vh;
 }
 
+.twitter-card{
+    background: #222;
+}
+
 .App{
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.tw-card-tittle{
+    color: #fff;
+    font-weight: bold;
+}
+
+.tw-card-shm{
+    color: rgb(66, 66, 241);
+    font-size: 0.8rem;
+}
+
+.tw-card-shm:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

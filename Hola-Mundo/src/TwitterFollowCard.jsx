@@ -15,7 +15,7 @@ export function TwitterFollowCard({userName = 'unknown', children, isFollowing})
 
         <aside>
             <button className="tw-followCard-button">
-                Seguir
+                Follow
             </button>
         </aside>
     </article>
