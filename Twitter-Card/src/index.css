@@ -7,23 +7,26 @@ body{
     min-height: 100vh;
 }
 
-.twitter-card{
-    background: #222;
-}
-
 .App{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.twitter-card{
+    background: #222;
+    padding: 18px;
+    border-radius: 4%;
+}
+
 .tw-card-tittle{
     color: #fff;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .tw-card-shm{
-    color: rgb(66, 66, 241);
+    color: #09f;
     font-size: 0.8rem;
 }
 
