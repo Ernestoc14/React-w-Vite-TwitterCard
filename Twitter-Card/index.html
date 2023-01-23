@@ -2,17 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/react.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Twitter Card</title>
   </head>
   <body>
     <div class="twitter-card">
       <div class="tw-card-tittle">Who to follow</div>
-      <div id="root"></div>
-      <div class="tw-card-shm">Show more<div/>
+      <div id="root"></div>  <!-- React Render  -->
+      <button class="tw-card-shm" onClick={App}>Show more</button>
     </div>
-    
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
