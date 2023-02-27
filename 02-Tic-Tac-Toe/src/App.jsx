@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const TURNS = {
-  x: "x",
-  o: "o",
+  X: "x",
+  O: "o",
 };
 
 const Square = ({ children, updateBoard, index }) => {
@@ -10,8 +10,12 @@ const Square = ({ children, updateBoard, index }) => {
 };
 
 function App() {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(
+      Array(9).fill(null)
+    );
 
+  const [turn, setTurn] = useState(TURNS.X)
+  
   return (
     <main className="board">
       <h1>Tic Tac Toe</h1>
@@ -19,7 +23,7 @@ function App() {
         {board.map((_, index) => {
           return (
             <Square key={index} index={index}>
-              {index}
+              {board[index]}
             </Square>
           );
         })}
