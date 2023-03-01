@@ -48,6 +48,17 @@ function App() {
     return null
   }
 
+  //Restarting the Game when is over
+  const resetGame = () => {
+    setBoard(Array(9).fill(null))
+    setTurn(TURNS.X)
+    setWinner(null)
+  }
+
+  const checkEndGame = (newBoard) =>{
+    return newBoard.every((Square) => Square != null)
+  }
+
   const updateBoard = (index) => {
     // dont update the index
     // if already have a value
@@ -63,21 +74,24 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       setWinner(newWinner)
+    } else if(checkEndGame(newBoard)){
+      setWinner(false) //Game is tie
     }
   }
 
   return (
     <main className="board">
       <h1>Tic Tac Toe</h1>
+      <button onClick={resetGame}>Reset the Game</button>
       <section className="game">
-        {board.map((_, index) => {
+        {board.map((square, index) => {
           return (
             <Square 
               key={index} 
               index={index} 
               updateBoard={updateBoard}
             >
-              {board[index]}
+              {square}
             </Square>
           );
         })}
@@ -97,13 +111,16 @@ function App() {
             <div className="text">
               <h2>
                 { winner == false
-                    ? 'Empate'
-                    : 'Gano '+ winner
+                    ? 'Tie Game'
+                    : winner + ' Win the match'
                 }
               </h2>
               <header className="win">
                 {winner && <Square>{winner}</Square>}
               </header>
+              <footer>
+                <button onClick={resetGame}>Start a New Game</button>
+              </footer>
             </div>
           </section>
           
